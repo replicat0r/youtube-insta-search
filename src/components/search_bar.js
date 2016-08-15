@@ -1,8 +1,20 @@
 'use strict'
 import React from 'react'
 
-const SearchBar = () => {
-  return <input/>
-}
+class SearchBar extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {term : ''}
+  }
 
+  render () {
+    return (
+      <div>
+      <input onChange={(event)=> this.setState({term: event.target.value})}/>
+
+      </div>
+    );
+  }
+
+}
 export default SearchBar
